@@ -7,16 +7,16 @@ public class AdminPanel {
     List<RegisteredUsers> registeredUsersList = new ArrayList<>();
 
     public void userManagementOptions() {
-        System.out.println("Welcome to E-Ryder Administrator Panel.");
-        System.out.println("What do you want to do?");
+
+        System.out.println("Please select an option:");
         System.out.println("1. Add New Users");
         System.out.println("2. View Registered Users");
         System.out.println("3. Remove Registered Users");
         System.out.println("4. Update Registered Users");
-        System.out.println("5. EXIT");
+        System.out.println("5. Demo the Bike Rental System");
+        System.out.println("6. EXIT");
         Scanner sc = new Scanner(System.in);
-        while (true) {
-            System.out.println("Input your choice:");
+
             int choice = sc.nextInt();
             sc.nextLine();
             switch (choice) {
@@ -33,13 +33,17 @@ public class AdminPanel {
                     updateRegisteredUsers();
                     break;
                 case 5:
+                    BikeRental bikeRental=new BikeRental();
+                    bikeRental.simulateApplicationInput();
+                    break;
+                case 6:
                     System.exit(0);
                     break;
                 default:
                     System.out.println("Invalid choice. Please try again");
             }
         }
-    }
+
 
     private void addNewUsers() {
         System.out.println("How many users the admin would like to add");
